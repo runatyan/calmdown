@@ -115,41 +115,61 @@
     <script src="./js/index.js" defer></script>
   </head>
   <body>
-    <!-- <header class="header">
+    <header class="header">
       <div class="header__inner">
         <div class="header__row">
-          <h1 class="header__">
+          <h1 class="header__logo">
             <a href="index.html"
-              ><img class="header__img" src="./img/insta_logo.png" alt=""
+              ><img class="header__img" src="./img/logo1.png" alt=""
             /></a>
           </h1>
           <nav class="header__nav">
             <ul class="header__list">
               <li class="header__item">
-                <a class="header__link" href="#"></a>
+                <a class="header__link" href="#">ホーム</a>
               </li>
               <li class="header__item">
-                <a class="header__link" href="#"></a>
+                <a class="header__link" href="#">アクセス</a>
               </li>
               <li class="header__item">
-                <a class="header__link" href="#"></a>
+                <a class="header__link" href="#">ギャラリー</a>
               </li>
-              <li class="header__item">
+              <li class="header__item header__insta">
                 <a class="header__link" href="#"
-                  ><img class="header__img" src="./img/insta_logo.png" alt=""
+                  ><img class="header__img" src="./img/Instagram.png" alt=""
                 /></a>
               </li>
             </ul>
           </nav>
         </div>
       </div>
-    </header> -->
+    </header>
     <main class="main">
       <section class="visual">
-        <div class="visual__imgbox">
-          <img class="visual__img" src="./img/damy.jpg" alt="" />
+        <div class="visual__inner">
+          <div class="visual__txbox">
+            <h2 class="visual__title">くらしの中に<br />植物を</h2>
+          </div>
+          <div class="visual__box">
+            <div class="visual__imgbox">
+              <img class="visual__img" src="./img/damy.jpg"
+              alt=""type=”image/svg+xml” width="20%%" height="40%" />
+            </div>
+            <!-- <p class="visual__catch">
+              <span class="visual__t1">穏</span>
+              <span class="visual__t2">や</span>
+              <span class="visual__t3">か</span>
+              <span class="visual__t4">で</span>
+              <span class="visual__t5">豊</span>
+              <span class="visual__t6">か</span>
+              <span class="visual__t7">な</span>
+              <span class="visual__t8">生</span>
+              <span class="visual__t9">活</span>
+            </p> -->
+          </div>
+
+          <img class="visual__plant" src="./img/pla.svg" alt="" />
         </div>
-        <h2 class="visual__title">くらしの中に<br />植物を</h2>
       </section>
       <section class="wave">
         <img src="./img/wave1.svg" alt="" type=”image/svg+xml” width="100%"
@@ -351,24 +371,100 @@
       </section>
       <section class="contact">
         <div class="contact__inner">
-          <div class="contact__textbox">
-            <p class="contact__title">
-              <span class="contact__top">スマホ1つでカンタンに</span><br /><span
-                class="contact__middle"
-                >お問い合わせ・ご質問</span
-              ><br />
-              <span class="contact__bottom">ができます</span>
-            </p>
-            <p class="contact__catch">
-              観葉植物に関する悩み事はInstagramから！
-            </p>
-            <p class="contact__text">
-              当店で販売されている、との感じでここではサンプルを入れておきます。どれくらいのやつがいいかな、2行くらいがいいかな
-            </p>
+          <div class="contact__content">
+            <div class="contact__row">
+              <div class="contact__textbox">
+                <p class="contact__title">
+                  <span class="contact__top">スマホ1つでカンタンに</span
+                  ><br /><span class="contact__middle"
+                    >お問い合わせ・ご質問</span
+                  ><br />
+                  <span class="contact__bottom">ができます</span>
+                </p>
+                <p class="contact__catch">
+                  観葉植物に関する悩み事はInstagramから！
+                </p>
+                <p class="contact__text">
+                  当店で販売されている、との感じでここではサンプルを入れておきます。どれくらいのやつがいいかな、2行くらいがいいかな
+                </p>
+              </div>
+              <div class="contact__btn">
+                <a href="#">
+                  <div class="contact__app">
+                    <p class="contact__inquiry">
+                      お問い合わせ<br />予約はInstagramから
+                    </p>
+                    <img
+                      class="contact__logo"
+                      src="./img/Instagram.png"
+                      alt=""
+                    />
+                    <p class="contact__annotation">
+                      ※クリックすると<br />
+                      Instagramが表示されます。
+                    </p>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <img class="contact__img" src="./img/mockup.png" alt="" />
+          </div>
+        </div>
+      </section>
+      <section class="access">
+        <div class="access__inner">
+          <h3 class="access__title">アクセス</h3>
+          <div class="access__row">
+            <div class="access__content">
+              <dl class="access__info">
+                <dt class="access__note">住所</dt>
+                <dd class="access__text">
+                  〒450-0002<br />
+                  名古屋市中村区名駅3-24-155
+                </dd>
+              </dl>
+              <dl class="access__info">
+                <dt class="access__note">営業時間</dt>
+                <dd class="access__text">9:00 〜 17:00</dd>
+              </dl>
+              <dl class="access__info">
+                <dt class="access__note">電話番号</dt>
+                <dd class="access__text">012-3344-5566</dd>
+              </dl>
+              <dl class="access__info">
+                <dt class="access__note">定休日</dt>
+                <dd class="access__text">毎週火曜日</dd>
+              </dl>
+              <dl class="access__info">
+                <dt class="access__note">駐車場</dt>
+                <dd class="access__text">2台有り</dd>
+              </dl>
+            </div>
+            <div class="access__map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.3621226033465!2d136.88370427572673!3d35.17252595775093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600376dce666cdbb%3A0x8b7d4364675157b2!2z44CSNDUwLTAwMDIg5oSb55-l55yM5ZCN5Y-k5bGL5biC5Lit5p2R5Yy65ZCN6aeF77yT5LiB55uu77yS77yU4oiS77yR77yVIOODiOODqeOCpOODh-ODs-ODiOOCs-ODs-ODlOODpeODvOOCv-WwgumWgOWtpuagoQ!5e0!3m2!1sja!2sjp!4v1689216297275!5m2!1sja!2sjp"
+                class="access__google"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
           </div>
         </div>
       </section>
     </main>
-    <footer></footer>
+    <section class="wave groud">
+      <img src="./img/wave5.svg" alt="" type=”image/svg+xml” width="100%"
+      height="100%" />
+    </section>
+    <footer class="footer">
+      <div class="footer__inner">
+        <img src="" alt="" />
+        <p class="footer__copy">
+          <small>All Rights Reserved 2023 ©︎ Calm plant shop</small>
+        </p>
+      </div>
+    </footer>
   </body>
 </html>

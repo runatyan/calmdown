@@ -1,7 +1,7 @@
 @charset "utf-8";
 
-@mixin mq-pc() {
-  @media (min-width: 960px) {
+@mixin mq-mobile() {
+  @media (max-width: 960px) {
     @content;
   }
 }
@@ -41,43 +41,187 @@ html {
   font-family: "zen-kaku-gothic-antique", sans-serif;
   font-weight: normal;
   letter-spacing: 0.1em;
+
+  @include mq-mobile() {
+    font-size: (16/16) * 100%;
+  }
 }
 
 .main {
   background-color: #fcfdf5;
 }
 
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  padding: (10/20) + em 0;
+  background-color: #fcfdf5;
+  font-size: p-rem(18);
+  font-family: "fot-tsukubrdgothic-std", sans-serif;
+
+  &__inner {
+    @include inner();
+  }
+
+  &__row {
+    @include flex();
+  }
+
+  &__logo {
+    width: 7%;
+  }
+
+  &__nav {
+    width: 45%;
+  }
+
+  &__list {
+    @include flex();
+  }
+
+  &__item {
+    padding: 0 (16/16) + em;
+    font-size: rem(18);
+    line-height: 1.7;
+    font-weight: bold;
+  }
+
+  &__insta {
+    width: 14%;
+  }
+}
+
+.footer {
+  background-color: #9b7b6c;
+  color: #fff;
+  padding: (60/20) + em 0;
+
+  &__copy {
+    font-size: p-rem(16);
+    text-align: center;
+  }
+}
+
+.groud {
+  background-color: #3fa037;
+}
+
 .visual {
   width: 100%;
   height: 100vh;
   position: relative;
-  margin-bottom: (90/20) + em;
+  padding: (120/20) + em 0;
+
+  &__inner {
+    @include inner();
+    width: 80%;
+  }
 
   &__imgbox {
-    width: 100%;
-    height: 80vh;
-    position: absolute;
+    width: 75%;
+    height: 70vh;
+    float: right;
   }
 
   &__img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    @include img();
+    border-radius: 20rem;
+  }
+
+  &__box {
+    position: relative;
   }
 
   &__title {
     position: absolute;
-    writing-mode: vertical-rl;
-    font-family: "shippori-mincho", sans-serif;
-    font-weight: normal;
-    font-size: p-rem(60);
-    background-color: #fff;
-    padding: (46/60) + em (22/60) + em;
-    bottom: 0%;
     left: 10%;
+    top: 16%;
+    writing-mode: vertical-rl;
+    font-family: "fot-tsukubrdgothic-std", sans-serif;
+    font-weight: normal;
+    font-size: p-rem(50);
+    background-color: #fff;
+    padding: (46/50) + em (22/50) + em;
     box-shadow: 0px 10px 10px #eee;
     text-align: right;
+    z-index: 3;
   }
+
+  &__plant {
+    position: absolute;
+    left: 10%;
+    top: 70%;
+    width: 40%;
+  }
+
+  // &__catch {
+  //   position: absolute;
+  //   z-index: 3;
+  //   right: 15%;
+  // }
+
+  // &__catch span {
+  //   display: inline-block;
+  //   position: absolute;
+  // }
+
+  // &__t1 {
+  //   transform: rotate(20deg);
+  //   top: 0em;
+  //   left: 4em;
+  // }
+  // &__t2 {
+  //   transform: rotate(38deg);
+  //   top: 1em;
+  //   left: 5.2em;
+  // }
+  // &__t3 {
+  //   transform: rotate(25deg);
+  //   top: 1.9em;
+  //   left: 6.4em;
+  // }
+  // &__t4 {
+  //   transform: rotate(46deg);
+  //   top: 3em;
+  //   left: 7em;
+  // }
+  // &__t5 {
+  //   transform: rotate(40deg);
+  //   top: 4.3em;
+  //   left: 8em;
+  // }
+  // &__t6 {
+  //   transform: rotate(40deg);
+  //   top: 6em;
+  //   left: 9em;
+  // }
+  // &__t7 {
+  //   transform: rotate(40deg);
+  //   top: 7.5em;
+  //   left: 10em;
+  // }
+  // &__t8 {
+  //   transform: rotate(40deg);
+  //   top: 6em;
+  //   left: 10.5em;
+  // }
+  // &__t9 {
+  //   transform: rotate(40deg);
+  //   top: 4em;
+  //   left: 11em;
+  // }
 }
 
 .info {
@@ -111,10 +255,19 @@ html {
 
   &__row {
     @include flex();
+
+    @include mq-mobile() {
+      display: block;
+    }
   }
 
   &__article {
     width: 30%;
+
+    @include mq-mobile() {
+      width: 100%;
+      margin-bottom: (20/16) + em;
+    }
   }
 
   &__imgbox {
@@ -194,11 +347,21 @@ html {
     margin: 0 auto;
     letter-spacing: 0.1em;
     line-height: 1.8;
+
+    @include mq-mobile() {
+      width: 100%;
+    }
   }
 
   &__imgbox {
     width: 50%;
     height: 65vh;
+
+    @include mq-mobile() {
+      width: 100%;
+      height: 100%;
+      margin-bottom: (20/16) + em;
+    }
   }
 
   &__img {
@@ -208,6 +371,11 @@ html {
   &__txbox {
     width: 50%;
     padding: 5vw;
+
+    @include mq-mobile() {
+      width: 100%;
+      padding: 0;
+    }
   }
 
   &__title {
@@ -226,6 +394,7 @@ html {
 .gallery {
   background-color: #bcd267;
   padding: (90/20) + em 0;
+  color: #755514;
 
   &__inner {
     @include inner();
@@ -256,6 +425,10 @@ html {
     top: 40%;
     left: 0;
     width: 30%;
+
+    @include mq-mobile() {
+      width: 100%;
+    }
   }
 
   &__catch {
@@ -267,12 +440,21 @@ html {
   &__list {
     @include flex();
     width: 64%;
+
+    @include mq-mobile() {
+      width: 100%;
+    }
   }
 
   &__item {
     width: 25vw;
     height: 25vw;
     margin-bottom: (30/20) + em;
+
+    @include mq-mobile() {
+      width: 40vw;
+      height: 40vw;
+    }
   }
 
   &__img {
@@ -282,38 +464,218 @@ html {
 }
 
 .contact {
-  padding: (90/20) + em;
+  padding: (200/20) + em 0;
 
   &__inner {
     @include inner();
   }
 
+  &__content {
+    position: relative;
+  }
+
+  &__row {
+    @include flex();
+    padding: (70/20) + em;
+    background-color: #3fa037;
+    border-radius: 2vw;
+
+    @include mq-mobile() {
+      display: block;
+      padding: (20/16) + em;
+    }
+  }
+
+  &__textbox {
+    width: 46%;
+    color: #fff;
+
+    @include mq-mobile() {
+      width: 100%;
+      padding-bottom: (400/16) + em;
+    }
+  }
+
   &__title {
     border-bottom: 1px solid;
-    display: inline-block;
     padding-bottom: (36/20) + em;
     margin-bottom: (36/20) + em;
   }
 
   &__top {
     font-size: p-rem(34);
+
+    @include mq-mobile() {
+      font-size: m-rem(20);
+    }
   }
 
   &__middle {
     font-size: p-rem(40);
+
+    @include mq-mobile() {
+      font-size: m-rem(26);
+    }
   }
 
   &__bottom {
     font-size: p-rem(24);
+
+    @include mq-mobile() {
+      font-size: m-rem(18);
+    }
   }
 
   &__catch {
     font-size: p-rem(18);
     margin-bottom: (18/18) + em;
+
+    @include mq-mobile() {
+      font-size: m-rem(16);
+    }
   }
 
   &__text {
     font-size: p-rem(16);
+
+    font-size: m-rem(14);
+  }
+
+  &__btn {
+    width: 48%;
+
+    @include mq-mobile() {
+      width: 100%;
+    }
+  }
+
+  &__app {
+    border-radius: 50%;
+    background-color: #fff;
+    width: 300px;
+    height: 300px;
+    padding: (60/20) + em;
+    margin-right: auto;
+
+    @include mq-mobile() {
+      margin: 0 auto;
+      width: 280px;
+      height: 280px;
+    }
+  }
+
+  &__inquiry {
+    font-size: p-rem(16);
+    text-align: center;
+    margin-bottom: (16/16) + em;
+
+    @include mq-mobile() {
+      font-size: m-rem(16);
+    }
+  }
+
+  &__logo {
+    width: 30%;
+    margin: 0 auto (10/20) + em auto;
+  }
+
+  &__annotation {
+    font-size: p-rem(12);
+    text-align: center;
+
+    @include mq-mobile() {
+      font-size: m-rem(12);
+    }
+  }
+
+  &__img {
+    position: absolute;
+    bottom: 0;
+    right: 2%;
+    width: 25%;
+
+    @include mq-mobile() {
+      top: 36%;
+      right: 50%;
+      width: 60%;
+      transform: translate(50%, 0%);
+    }
+  }
+}
+
+.access {
+  padding: (90/20) + em 0;
+  background-color: #3fa037;
+  border-radius: 5% 5% 0 0;
+  color: #fff;
+  font-family: "fot-tsukubrdgothic-std", sans-serif;
+
+  &__inner {
+    @include inner();
+  }
+
+  &__title {
+    font-size: p-rem(40);
+    margin-bottom: (40/40) + em;
+  }
+
+  &__row {
+    @include flex();
+    align-items: flex-start;
+
+    @include mq-mobile() {
+      display: block;
+    }
+  }
+
+  &__content {
+    width: 50%;
+
+    @include mq-mobile() {
+      width: 100%;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 1px solid #fff;
+    padding-top: (40/20) + em;
+    margin-bottom: (40/20) + em;
+
+    @include mq-mobile() {
+      font-size: m-rem(14);
+    }
+  }
+
+  &__note {
+    width: 18%;
+    color: #3fa037;
+    background-color: #fff;
+    text-align: center;
+    height: 30px;
+    border-radius: 6px;
+    margin-right: (40/20) + em;
+
+    @include mq-mobile() {
+      width: 24%;
+    }
+  }
+
+  &__text {
+    @include mq-mobile() {
+      width: 60%;
+    }
+  }
+
+  &__google {
+    width: 35vw;
+    height: 35vw;
+
+    @include mq-mobile() {
+      width: 100%;
+      height: 80vw;
+    }
   }
 }
 
@@ -323,7 +685,6 @@ html {
     width: 100%;
     position: relative;
     &::after {
-      content: "01";
       position: absolute;
       top: 0;
       right: 30px;
@@ -334,6 +695,36 @@ html {
       font-weight: 500;
       line-height: 1;
       letter-spacing: 0.04em;
+
+      @include mq-mobile() {
+        top: 35vh;
+        right: -5%;
+        font-size: m-rem(100);
+      }
     }
+
+    &:nth-child(1)::after {
+      content: "01";
+    }
+
+    &:nth-child(2)::after {
+      content: "02";
+    }
+
+    &:nth-child(3)::after {
+      content: "03";
+    }
+
+    &:nth-child(4)::after {
+      content: "04";
+    }
+
+    &:nth-child(5)::after {
+      content: "05";
+    }
+  }
+
+  @include mq-mobile() {
+    display: block;
   }
 }

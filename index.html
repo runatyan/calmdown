@@ -10,8 +10,9 @@
     />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
     />
+
     <link rel="stylesheet" href="./css/style.css" />
 
     <script>
@@ -109,7 +110,7 @@
     </script>
 
     <script
-      src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"
+      src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"
       defer
     ></script>
     <script src="./js/index.js" defer></script>
@@ -126,13 +127,13 @@
           <nav class="header__nav">
             <ul class="header__list">
               <li class="header__item">
-                <a class="header__link" href="#">ホーム</a>
+                <a class="header__link" href="index.html">ホーム</a>
               </li>
               <li class="header__item">
-                <a class="header__link" href="#">アクセス</a>
+                <a class="header__link" href="#access">アクセス</a>
               </li>
               <li class="header__item">
-                <a class="header__link" href="#">ギャラリー</a>
+                <a class="header__link" href="./gallery.html">ギャラリー</a>
               </li>
               <li class="header__item header__insta">
                 <a class="header__link" href="#"
@@ -144,32 +145,50 @@
         </div>
       </div>
     </header>
+
+    <section class="spmenu">
+      <div class="spmenu__contents">
+        <ul class="spmenu__nav">
+          <li class="spmenu__navlist">
+            <a class="spmenu__link" href="index.html">ホーム</a>
+          </li>
+          <li class="spmenu__navlist">
+            <a class="spmenu__link" href="#consept">アクセス</a>
+          </li>
+          <li class="spmenu__navlist">
+            <a class="spmenu__link" href="menu.html">ギャラリ</a>
+          </li>
+          <li class="spmenu__navlist">
+            <a class="spmenu__link" href="news.html">NEWS</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- バーガーボタン -->
+    <div class="burgerbtn">
+      <span class="burgerbtn__border bordertop"></span>
+      <span class="burgerbtn__border bordermiddle"></span>
+      <span class="burgerbtn__border borderbottom"></span>
+    </div>
+
     <main class="main">
       <section class="visual">
-        <div class="visual__inner">
+
           <div class="visual__txbox">
             <h2 class="visual__title">くらしの中に<br />植物を</h2>
           </div>
           <div class="visual__box">
             <div class="visual__imgbox">
               <img class="visual__img" src="./img/damy.jpg"
-              alt=""type=”image/svg+xml” width="20%%" height="40%" />
+              alt=""type=”image/svg+xml” width="20%" height="40%" />
             </div>
-            <!-- <p class="visual__catch">
-              <span class="visual__t1">穏</span>
-              <span class="visual__t2">や</span>
-              <span class="visual__t3">か</span>
-              <span class="visual__t4">で</span>
-              <span class="visual__t5">豊</span>
-              <span class="visual__t6">か</span>
-              <span class="visual__t7">な</span>
-              <span class="visual__t8">生</span>
-              <span class="visual__t9">活</span>
-            </p> -->
-          </div>
 
           <img class="visual__plant" src="./img/pla.svg" alt="" />
-        </div>
+        <img class="visual__plant-s" src="./img/pla2.svg" alt="" />
+          <img class="visual__circle" src="./img/circle.svg" alt="" />
+          <div class="visual__circle-s"></div>
+          <div class="visual__circle-t"></div>
       </section>
       <section class="wave">
         <img src="./img/wave1.svg" alt="" type=”image/svg+xml” width="100%"
@@ -317,6 +336,8 @@
                 </div>
               </div>
             </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
           </div>
         </div>
       </section>
@@ -388,30 +409,33 @@
                   当店で販売されている、との感じでここではサンプルを入れておきます。どれくらいのやつがいいかな、2行くらいがいいかな
                 </p>
               </div>
-              <div class="contact__btn">
-                <a href="#">
-                  <div class="contact__app">
-                    <p class="contact__inquiry">
-                      お問い合わせ<br />予約はInstagramから
-                    </p>
-                    <img
-                      class="contact__logo"
-                      src="./img/Instagram.png"
-                      alt=""
-                    />
-                    <p class="contact__annotation">
-                      ※クリックすると<br />
-                      Instagramが表示されます。
-                    </p>
-                  </div>
-                </a>
+              <div class="contact__box">
+                <img class="contact__img" src="./img/mockup.png" alt="" />
+
+                <div class="contact__btn">
+                  <a href="#">
+                    <div class="contact__app">
+                      <p class="contact__inquiry">
+                        お問い合わせ<br />予約はInstagramから
+                      </p>
+                      <img
+                        class="contact__logo"
+                        src="./img/Instagram.png"
+                        alt=""
+                      />
+                      <p class="contact__annotation">
+                        ※クリックすると<br />
+                        Instagramが表示されます。
+                      </p>
+                    </div>
+                  </a>
+                </div>
               </div>
             </div>
-            <img class="contact__img" src="./img/mockup.png" alt="" />
           </div>
         </div>
       </section>
-      <section class="access">
+      <section id="access" class="access">
         <div class="access__inner">
           <h3 class="access__title">アクセス</h3>
           <div class="access__row">

@@ -122,6 +122,7 @@ ul {
   width: calc(100% - 10vw);
   height: 80vh;
   margin: 0 auto;
+  position: relative;
 }
 .visual__img {
   -o-object-fit: cover;
@@ -129,6 +130,9 @@ ul {
   width: 100%;
   height: 100%;
   border-radius: 8rem;
+  position: absolute;
+  opacity: 0;
+  transition: all 1s ease-in-out;
 }
 .visual__title {
   position: absolute;
@@ -258,6 +262,7 @@ ul {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 3em;
 }
 @media (max-width: 600px) {
   .news__row {
@@ -289,6 +294,22 @@ ul {
   width: 100%;
   height: 100%;
 }
+.news__btn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  margin: 0 auto;
+  width: 300px;
+  text-align: center;
+  padding: 1em;
+  background-color: #90ad66;
+  border-radius: 15px;
+}
+.news__insta {
+  width: 16%;
+}
 
 .calendar__row {
   display: flex;
@@ -296,8 +317,18 @@ ul {
   justify-content: space-between;
   align-items: center;
 }
+@media (max-width: 960px) {
+  .calendar__row {
+    display: block;
+  }
+}
 .calendar__detail {
-  width: 50%;
+  width: 40%;
+}
+@media (max-width: 960px) {
+  .calendar__detail {
+    display: none;
+  }
 }
 .calendar__btnbox {
   display: flex;
@@ -319,6 +350,11 @@ ul {
 .calendar__content {
   width: 50%;
 }
+@media (max-width: 960px) {
+  .calendar__content {
+    width: 100%;
+  }
+}
 .calendar__title {
   text-align: center;
   font-family: "fot-tsukubrdgothic-std", sans-serif;
@@ -331,6 +367,16 @@ ul {
 }
 .calendar__explanation {
   line-height: 1.8;
+}
+.calendar__explanation-t {
+  line-height: 1.8;
+  display: none;
+  margin-bottom: 0.5em;
+}
+@media (max-width: 960px) {
+  .calendar__explanation-t {
+    display: block;
+  }
 }
 
 .consept {
@@ -452,6 +498,7 @@ ul {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 1.5em;
 }
 .gallery__item {
   width: 25vw;
@@ -470,6 +517,19 @@ ul {
   width: 100%;
   height: 100%;
   border-radius: 30px;
+}
+.gallery__btn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  margin: 0 auto;
+  width: 300px;
+  text-align: center;
+  padding: 1em;
+  background-color: #90ad66;
+  border-radius: 15px;
 }
 
 .contact {

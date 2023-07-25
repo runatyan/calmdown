@@ -157,11 +157,15 @@ ul {
     width: calc(100% - 10vw);
     height: 80vh;
     margin: 0 auto;
+    position: relative;
   }
 
   &__img {
     @include img();
     border-radius: 8rem;
+    position: absolute;
+    opacity: 0;
+    transition: all 1s ease-in-out;
   }
 
   &__title {
@@ -287,6 +291,7 @@ ul {
 
   &__row {
     @include flex();
+    margin-bottom: (60/20) + em;
 
     @include mq-mobile() {
       display: block;
@@ -315,15 +320,38 @@ ul {
   &__img {
     @include img();
   }
+
+  &__btn {
+    @include flex();
+    color: #fff;
+    margin: 0 auto;
+    width: 300px;
+    text-align: center;
+    padding: (20/20) + em;
+    background-color: #90ad66;
+    border-radius: 15px;
+  }
+
+  &__insta {
+    width: 16%;
+  }
 }
 
 .calendar {
   &__row {
     @include flex();
+
+    @include mq-tab() {
+      display: block;
+    }
   }
 
   &__detail {
-    width: 50%;
+    width: 40%;
+
+    @include mq-tab() {
+      display: none;
+    }
   }
 
   &__btnbox {
@@ -345,6 +373,10 @@ ul {
 
   &__content {
     width: 50%;
+
+    @include mq-tab() {
+      width: 100%;
+    }
   }
 
   &__title {
@@ -361,6 +393,16 @@ ul {
 
   &__explanation {
     line-height: 1.8;
+
+    &-t {
+      line-height: 1.8;
+      display: none;
+      margin-bottom: (10/20) + em;
+
+      @include mq-tab() {
+        display: block;
+      }
+    }
   }
 }
 
@@ -481,6 +523,7 @@ ul {
 
   &__list {
     @include flex();
+    margin-bottom: (30/20) + em;
   }
 
   &__item {
@@ -497,6 +540,17 @@ ul {
   &__img {
     @include img();
     border-radius: 30px;
+  }
+
+  &__btn {
+    @include flex();
+    color: #fff;
+    margin: 0 auto;
+    width: 300px;
+    text-align: center;
+    padding: (20/20) + em;
+    background-color: #90ad66;
+    border-radius: 15px;
   }
 }
 

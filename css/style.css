@@ -5,6 +5,7 @@ html {
   font-family: "zen-kaku-gothic-antique", sans-serif;
   font-weight: normal;
   letter-spacing: 0.1em;
+  scroll-behavior: smooth;
 }
 @media (max-width: 960px) {
   html {
@@ -27,6 +28,7 @@ ul {
   margin: 0;
 }
 
+/*------------------------------------------------------------*/
 .header {
   position: fixed;
   width: 100%;
@@ -87,8 +89,31 @@ ul {
   line-height: 1.7;
   font-weight: bold;
 }
+.header__link {
+  position: relative;
+  padding-bottom: 0.5em;
+}
+.header__link::after {
+  position: absolute;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: #000000;
+  bottom: -1px;
+  transform: scale(0, 1);
+  transform-origin: right top; /*変形（アンダーラインの伸長）の原点がaタグ（各メニュー）の右端*/
+  transition: transform 0.3s; /*変形の時間*/
+}
+.header__link:hover::after {
+  transform: scale(1, 1); /*ホバー後、x軸方向に1（相対値）伸長*/
+  transform-origin: left top; /*左から右に向かう*/
+}
 .header__insta {
   width: 14%;
+}
+.header__insta:hover {
+  opacity: 0.7;
 }
 
 .footer {
@@ -294,21 +319,38 @@ ul {
   width: 100%;
   height: 100%;
 }
-.news__btn {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  color: #fff;
-  margin: 0 auto;
-  width: 300px;
+.news__btnbox {
   text-align: center;
-  padding: 1em;
-  background-color: #90ad66;
-  border-radius: 15px;
 }
-.news__insta {
-  width: 16%;
+.news__btn {
+  min-width: 200px;
+  padding: 1em 2em;
+  border: 2px solid #000;
+  border-radius: 4.625em;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.news__btn::before {
+  content: "";
+  position: absolute;
+  top: -200px;
+  left: -200px;
+  width: 200px;
+  height: 200px;
+  background: #fff;
+  border-radius: 50%;
+  z-index: -1;
+  transition: all 0.4s ease-out;
+}
+.news__btn:hover {
+  color: #000;
+}
+.news__btn:hover::before {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .calendar__row {
@@ -518,18 +560,38 @@ ul {
   height: 100%;
   border-radius: 30px;
 }
-.gallery__btn {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  color: #fff;
-  margin: 0 auto;
-  width: 300px;
+.gallery__btnbox {
   text-align: center;
-  padding: 1em;
-  background-color: #90ad66;
-  border-radius: 15px;
+}
+.gallery__btn {
+  min-width: 200px;
+  padding: 1em 2em;
+  border: 2px solid #000;
+  border-radius: 4.625em;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.gallery__btn::before {
+  content: "";
+  position: absolute;
+  top: -200px;
+  left: -200px;
+  width: 200px;
+  height: 200px;
+  background: #fff;
+  border-radius: 50%;
+  z-index: -1;
+  transition: all 0.4s ease-out;
+}
+.gallery__btn:hover {
+  color: #000;
+}
+.gallery__btn:hover::before {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .contact {
@@ -612,7 +674,7 @@ ul {
   font-size: 0.875rem;
 }
 .contact__box {
-  width: 48%;
+  width: 50%;
 }
 @media (max-width: 960px) {
   .contact__box {
@@ -778,6 +840,11 @@ ul {
   justify-content: space-between;
   align-items: center;
 }
+.t-gallery__list::after {
+  content: "";
+  display: block;
+  width: 26%;
+}
 @media (max-width: 960px) {
   .t-gallery__list {
     display: block;
@@ -859,28 +926,38 @@ ul {
     visibility: visible;
   }
 }
-.spmenu__nav {
-  padding: 0;
-  list-style: none;
+@media (max-width: 960px) {
+  .spmenu__nav {
+    padding: 0;
+    list-style: none;
+    width: 60%;
+    margin: 0 auto 2em auto;
+  }
 }
-.spmenu__navlist {
-  margin: 2em 0;
-  text-align: center;
+@media (max-width: 960px) {
+  .spmenu__navlist {
+    margin-bottom: 2em 0;
+    padding: 2em;
+    text-align: center;
+    border-bottom: 1px dashed #000;
+  }
 }
-.spmenu__navlist ::after {
-  display: block;
-  font-size: rem(14);
-  text-align: center;
-}
-.spmenu__link {
-  color: #000;
-  font-size: rem(18);
-  font-weight: bold;
+@media (max-width: 960px) {
+  .spmenu__link {
+    color: #000;
+    font-size: 1.25rem;
+    font-weight: bold;
+    font-family: "fot-tsukubrdgothic-std", sans-serif;
+  }
 }
 .spmenu__visible {
   transform: translate(0, 0);
   transition: 0.6s ease-in-out;
   transition-delay: 0.1s;
+}
+.spmenu__insta {
+  width: 10%;
+  margin: 0 auto;
 }
 
 .burgerbtn {
@@ -937,5 +1014,15 @@ ul {
 .borderbottom__open {
   transform: translateY(-14px) rotate(-45deg);
   transition: 0.6s;
+}
+
+.fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1.5s, transform 1s;
+}
+.fade.fadeon {
+  opacity: 1;
+  transform: translateY(0px);
 }
 /*# sourceMappingURL=style.css.map */

@@ -41,3 +41,16 @@ function viewSlide(className, slideNo = -1) {
     viewSlide(className, slideNo);
   }, 5000);
 }
+
+const fade = document.querySelectorAll(".fade");
+for (let i = fade.length; i--; ) {
+  let observer = new IntersectionObserver((entries, observer) => {
+    for (let j = entries.length; j--; ) {
+      if (entries[j].isIntersecting) {
+        entries[j].target.classList.add("fadeon");
+        observer.unobserve(entries[j].target);
+      }
+    }
+  });
+  observer.observe(fade[i]);
+}

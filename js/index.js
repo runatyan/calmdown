@@ -1,13 +1,3 @@
-//swiper.jsのもの
-const swiper = new Swiper(".swiper", {
-  spaceBetween: 30,
-  slidesPerView: 1.05, // 表示したいスライドの数に応じて適切に変更する
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-});
-
 // バーガーボタン
 const burgerBtn = document.querySelector(".burgerbtn");
 const burgerBtnTop = document.querySelector(".bordertop");
@@ -39,7 +29,7 @@ function viewSlide(className, slideNo = -1) {
   imgArray[slideNo].style.opacity = 1;
   setTimeout(function () {
     viewSlide(className, slideNo);
-  }, 5000);
+  }, 4000);
 }
 
 const fade = document.querySelectorAll(".fade");
@@ -54,3 +44,13 @@ for (let i = fade.length; i--; ) {
   });
   observer.observe(fade[i]);
 }
+
+//swiper.jsのもの
+const swiper = new Swiper(".swiper", {
+  spaceBetween: 30,
+  slidesPerView: 1.05, // 表示したいスライドの数に応じて適切に変更する
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});

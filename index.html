@@ -2,6 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calm</title>
     <link
@@ -12,8 +13,6 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
     />
-
-    <link rel="stylesheet" href="./css/style.css" />
 
     <script>
       (function (d) {
@@ -109,10 +108,47 @@
       })(document);
     </script>
 
+
+<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.5/index.global.min.js'></script>
+   <script src="./js/google-calendar/index.global.js"></script>
+   <script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://unpkg.com/tippy.js@6"></script>
+   <script>
+      document.addEventListener('DOMContentLoaded', function () {
+         var calendarEl = document.getElementById('calendar');
+         var calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth',
+            googleCalendarApiKey: 'AIzaSyAqq7Zb-khtkBPw6o63l52lJawMD60LqoQ',
+            events: '9a9971dc3765882e7acebed9d3d1fbc254d756db7b8b8d2ed821e9c4847f4674@group.calendar.google.com',
+
+            eventClick: function (info) {
+               info.jsEvent.preventDefault();
+            },
+            eventTimeFormat: { hour: 'numeric', minute: '2-digit' },
+            eventDidMount: (e) => {
+               tippy(e.el, {
+                  content: e.event.title,
+               });
+            },
+            locale: "jp",
+            dayCellContent: function (arg) {
+               return arg.date.getDate();
+            },
+            buttonText: {
+               today: '今日',
+            },
+         });
+         calendar.render();
+      });
+   </script>
+
+
     <script
       src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"
       defer
     ></script>
+        <link rel="stylesheet" href="./css/style.css" />
+
     <script src="./js/index.js" defer></script>
   </head>
   <body>
@@ -136,7 +172,7 @@
                 <a class="header__link" href="./gallery.html">ギャラリー</a>
               </li>
               <li class="header__item header__insta">
-                <a href="#"
+                <a href="https://instagram.com/trident__it?igshid=MzRlODBiNWFlZA=="
                   ><img class="header__img" src="./img/Instagram.png" alt=""
                 /></a>
               </li>
@@ -153,13 +189,14 @@
             <a class="spmenu__link" href="index.html">ホーム</a>
           </li>
           <li class="spmenu__navlist">
-            <a class="spmenu__link" href="#access">アクセス</a>
+            <a class="spmenu__link" href="index.html#access">アクセス</a>
           </li>
           <li class="spmenu__navlist">
             <a class="spmenu__link" href="./gallery.html">ギャラリー</a>
           </li>
         </ul>
-           <img class="spmenu__insta" src="./img/Instagram.png" alt="">
+        <a href="https://instagram.com/trident__it?igshid=MzRlODBiNWFlZA==">
+           <img class="spmenu__insta" src="./img/Instagram.png" alt=""></a>
       </div>
     </section>
 
@@ -190,9 +227,8 @@
           <div class="visual__circle-s"></div>
           <div class="visual__circle-t"></div>
       </section>
-      <section class="wave">
-        <img src="./img/wave1.svg" alt="" type=”image/svg+xml” width="100%"
-        height="100%" />
+          <section class="wave wave-m">
+        <img src="./img/wave1-2.svg" alt="" type=”image/svg+xml” />
       </section>
       <section class="info">
         <div class="info__inner">
@@ -223,15 +259,15 @@
                 </article>
               </div>
               <div class="news__btnbox">
-                <a class="news__btn" href="#">もっと見る</a>
+                <a class="news__btn" href="https://instagram.com/trident__it?igshid=MzRlODBiNWFlZA==">もっと見る</a>
               </div>
           </div>
           <div class="info__ calendar calendar fade">
+               <h3 class="calendar__title">カレンダー</h3>
             <div class="calendar__row">
               <div class="calendar__detail">
                 <div class="calendar__btnbox">
                   <p class="calendar__btn">営業日</p>
-                  <p class="calendar__btn">ワークスペース</p>
                 </div>
                 <p class="calendar__explanation">
                   仕入れ状況などにより営業日が急遽変更になる可能性がございます。<br />
@@ -239,21 +275,18 @@
                 </p>
               </div>
               <div class="calendar__content">
-                <h3 class="calendar__title">カレンダー</h3>
                 <p class="calendar__explanation-t">
                   仕入れ状況などにより営業日が急遽変更になる可能性がございます。<br />
                   カレンダーをご覧ください。
                 </p>
-                <div class="calendar__box">
-                    <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Asia%2FTokyo&showDate=1&showTitle=0&showNav=1&showPrint=1&showTabs=1&showCalendars=1&showTz=0&src=bmFydXlvc2hpNTE0LnRyaUBnbWFpbC5jb20&src=OWE5OTcxZGMzNzY1ODgyZTdhY2ViZWQ5ZDNkMWZiYzI1NGQ3NTZkYjdiOGI4ZDJlZDgyMWU5YzQ4NDdmNDY3NEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&src=amEuamFwYW5lc2UjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23039BE5&color=%23EF6C00&color=%2333B679&color=%230B8043" style="border:solid 1px #777" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
-                </div>
+             <div id="calendar" class="calendar__box"></div>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section class="wave">
-        <img src="./img/wave2.svg" alt="" type=”image/svg+xml” width="100%"
+            <section class="wave wave-m">
+        <img src="./img/wave2-2.svg" alt="" type=”image/svg+xml” width="100%"
         height="100%" />
       </section>
       <section class="consept fade">
@@ -271,7 +304,7 @@
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <div class="consept__imgbox">
-                  <img class="consept__img" src="./img/damy.jpg" alt="" />
+                  <img class="consept__img" src="./img/damy9.jpg" alt="" />
                 </div>
                 <div class="consept__txbox">
                   <h4 class="consept__title">雑誌などのセット販売</h4>
@@ -285,7 +318,7 @@
               </div>
               <div class="swiper-slide">
                 <div class="consept__imgbox">
-                  <img class="consept__img" src="./img/damy.jpg" alt="" />
+                  <img class="consept__img" src="./img/damy5.jpg" alt="" />
                 </div>
                 <div class="consept__txbox">
                   <h4 class="consept__title">豊富な種類の植物を販売</h4>
@@ -299,7 +332,7 @@
               </div>
               <div class="swiper-slide">
                 <div class="consept__imgbox">
-                  <img class="consept__img" src="./img/damy.jpg" alt="" />
+                  <img class="consept__img" src="./img/damy6.jpg" alt="" />
                 </div>
                 <div class="consept__txbox">
                   <h4 class="consept__title">ご購入時の悩みの相談</h4>
@@ -313,7 +346,7 @@
               </div>
               <div class="swiper-slide">
                 <div class="consept__imgbox">
-                  <img class="consept__img" src="./img/damy.jpg" alt="" />
+                  <img class="consept__img" src="./img/damy7.jpg" alt="" />
                 </div>
                 <div class="consept__txbox">
                   <h4 class="consept__title">
@@ -329,7 +362,7 @@
               </div>
               <div class="swiper-slide">
                 <div class="consept__imgbox">
-                  <img class="consept__img" src="./img/damy.jpg" alt="" />
+                  <img class="consept__img" src="./img/damy8.jpg" alt="" />
                 </div>
                 <div class="consept__txbox">
                   <h4 class="consept__title">充実した<br />アフターサービス</h4>
@@ -379,12 +412,12 @@
               </div>
             </div>
              <div class="gallery__btnbox">
-              <a class="gallery__btn" href="#">もっと見る</a>
+              <a class="gallery__btn" href="./gallery.html">もっと見る</a>
             </div>
         </div>
       </section>
-      <section class="wave">
-        <img src="./img/wave4.svg" alt="" type=”image/svg+xml” width="100%"
+          <section class="wave-m">
+        <img src="./img/wave4-2.svg" alt="" type=”image/svg+xml” width="100%"
         height="100%" />
       </section>
       <section class="contact fade">
@@ -410,7 +443,7 @@
                 <img class="contact__img" src="./img/mockup.png" alt="" />
 
                 <div class="contact__btn">
-                  <a href="#">
+                  <a href="https://instagram.com/trident__it?igshid=MzRlODBiNWFlZA==">
                     <div class="contact__app">
                       <p class="contact__inquiry">
                         お問い合わせ<br />予約はInstagramから
@@ -475,8 +508,8 @@
         </div>
       </section>
     </main>
-    <section class="wave groud">
-      <img src="./img/wave5.svg" alt="" type=”image/svg+xml” width="100%"
+       <section class="wave wave-m groud">
+      <img src="./img/wave5-2.svg" alt="" type=”image/svg+xml” width="100%"
       height="100%" />
     </section>
     <footer class="footer">

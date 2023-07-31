@@ -137,13 +137,13 @@ ul {
       background: #000000;
       bottom: -1px;
       transform: scale(0, 1);
-      transform-origin: right top; /*変形（アンダーラインの伸長）の原点がaタグ（各メニュー）の右端*/
-      transition: transform 0.3s; /*変形の時間*/
+      transform-origin: right top;
+      transition: transform 0.3s;
     }
 
     &:hover::after {
-      transform: scale(1, 1); /*ホバー後、x軸方向に1（相対値）伸長*/
-      transform-origin: left top; /*左から右に向かう*/
+      transform: scale(1, 1);
+      transform-origin: left top;
     }
   }
 
@@ -196,6 +196,10 @@ ul {
     position: absolute;
     opacity: 0;
     transition: all 1s ease-in-out;
+
+    &:first-child {
+      opacity: 1;
+    }
   }
 
   &__title {
@@ -291,7 +295,7 @@ ul {
 }
 
 .info {
-  background-color: #d5ead8;
+  background-color: #d2e7d5;
   padding: (90/20) + em 0;
   &__inner {
     @include inner();
@@ -417,8 +421,9 @@ ul {
   &__btn {
     padding: (16/20) + em (12/20) + em;
     background-color: #90ad66;
-    border-radius: 8px;
+    border-radius: 30px;
     font-weight: bold;
+    color: #fff;
 
     &:first-child {
       margin-right: (40/20) + em;
@@ -443,6 +448,7 @@ ul {
   &__box {
     width: 100%;
     height: 400px;
+    padding: (16/20) + em;
   }
 
   &__explanation {
@@ -458,6 +464,36 @@ ul {
       }
     }
   }
+}
+
+.fc .fc-toolbar-title {
+  font-size: p-rem(25);
+  font-weight: normal;
+}
+
+.fc .fc-col-header-cell-cushion {
+  font-weight: normal;
+}
+
+.fc-theme-standard td,
+.fc-theme-standard th {
+  border: 2px solid #fff;
+}
+
+.fc-theme-standard .fc-scrollgrid {
+  border: 2px solid #fff;
+}
+
+.fc .fc-button-group > .fc-button {
+  background-color: transparent;
+}
+
+.fc .fc-button .fc-icon {
+  color: #000;
+}
+
+.fc .fc-button-primary:disabled {
+  background-color: #000;
 }
 
 .consept {
@@ -495,7 +531,7 @@ ul {
 
     @include mq-tab() {
       width: 100%;
-      height: 100%;
+      height: 40vh;
       margin-bottom: (20/16) + em;
     }
   }
@@ -787,6 +823,11 @@ ul {
   color: #fff;
   font-family: "fot-tsukubrdgothic-std", sans-serif;
 
+  @include mq-tab() {
+    padding: (70/20) + em 0;
+    border-radius: 5rem 5rem 0 0;
+  }
+
   &__inner {
     @include inner();
   }
@@ -840,6 +881,7 @@ ul {
   }
 
   &__text {
+    color: #fff;
     @include mq-tab() {
       width: 60%;
     }
@@ -879,18 +921,16 @@ ul {
       display: block;
       width: 26%;
     }
-
-    @include mq-tab() {
-      display: block;
-    }
   }
 
   &__item {
-    width: 26%;
+    width: 24vw;
+    height: 24vw;
     margin-bottom: (50/20) + em;
 
     @include mq-tab() {
-      width: 100%;
+      width: 40vw;
+      height: 40vw;
     }
   }
 
@@ -928,16 +968,6 @@ ul {
   @include mq-tab() {
     display: block;
   }
-}
-
-.swiper-button-next {
-  color: #ff0000; /* 次へボタンの文字色 */
-  font-size: p-rem(20);
-}
-
-.swiper-button-prev {
-  color: #00ff00; /* 前へボタンの文字色 */
-  font-size: p-rem(20);
 }
 
 /* ハンバーガーボタン */
@@ -1072,4 +1102,31 @@ ul {
     opacity: 1;
     transform: translateY(0px);
   }
+}
+
+.wave-m img {
+  width: 100%;
+  height: 40px;
+}
+
+.wave-groud {
+  background-color: #fcfdf5;
+}
+
+.swiper-button-next {
+  color: #000; /* 次へボタンの文字色 */
+  font-size: p-rem(20);
+}
+
+.swiper-button-prev {
+  color: #000; /* 前へボタンの文字色 */
+  font-size: p-rem(20);
+}
+
+.swiper-button-prev:after {
+  content: "<";
+}
+
+.swiper-button-next:after {
+  content: ">";
 }

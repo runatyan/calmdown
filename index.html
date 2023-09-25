@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calm</title>
+    <meta name="format-detection" content="telephone=no">
+    <title>Calm植物店</title>
     <link
       rel="stylesheet"
       href="https://unpkg.com/modern-css-reset/dist/reset.min.css"
@@ -118,8 +119,8 @@
          var calendarEl = document.getElementById('calendar');
          var calendar = new FullCalendar.Calendar(calendarEl, {
             initialView: 'dayGridMonth',
-            googleCalendarApiKey: 'AIzaSyAqq7Zb-khtkBPw6o63l52lJawMD60LqoQ',
-            events: '9a9971dc3765882e7acebed9d3d1fbc254d756db7b8b8d2ed821e9c4847f4674@group.calendar.google.com',
+            googleCalendarApiKey: 'AIzaSyBUdG2-IbhS90mLDPjfzLLJcFOPKE8b7H4',
+            events: '86acbb980197498d6d9c36f04f02d74cd56166fd085f811be4b27462467b2d29@group.calendar.google.com',
 
             eventClick: function (info) {
                info.jsEvent.preventDefault();
@@ -149,6 +150,12 @@
     ></script>
         <link rel="stylesheet" href="./css/style.css" />
 
+
+
+            <!-- Add jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
     <script src="./js/index.js" defer></script>
   </head>
   <body>
@@ -172,8 +179,8 @@
                 <a class="header__link" href="./gallery.html">ギャラリー</a>
               </li>
               <li class="header__item header__insta">
-                <a href="https://instagram.com/trident__it?igshid=MzRlODBiNWFlZA=="
-                  ><img class="header__img" src="./img/Instagram.png" alt=""
+                <a href="https://www.instagram.com/calm_plants_store/" target="_blank"
+                  ><img class="header__instaimg" src="./img/Instagram.png" alt=""
                 /></a>
               </li>
             </ul>
@@ -189,13 +196,13 @@
             <a class="spmenu__link" href="index.html">ホーム</a>
           </li>
           <li class="spmenu__navlist">
-            <a class="spmenu__link" href="index.html#access">アクセス</a>
+            <a class="spmenu__link spmenu__close" href="index.html#access">アクセス</a>
           </li>
           <li class="spmenu__navlist">
             <a class="spmenu__link" href="./gallery.html">ギャラリー</a>
           </li>
         </ul>
-        <a href="https://instagram.com/trident__it?igshid=MzRlODBiNWFlZA==">
+        <a href="https://www.instagram.com/calm_plants_store/" target="_blank">
            <img class="spmenu__insta" src="./img/Instagram.png" alt=""></a>
       </div>
     </section>
@@ -210,7 +217,7 @@
     <main class="main">
       <section class="visual">
           <div class="visual__txbox">
-            <h2 class="visual__title">くらしの中に<br />植物を</h2>
+            <h2 class="visual__title">くらしの中に植物を</h2>
           </div>
           <div class="visual__box">
             <div class="visual__imgbox">
@@ -234,32 +241,15 @@
         <div class="info__inner">
           <div class="info__news news fade">
             <h3 class="news__title">お知らせ</h3>
-              <p class="news__address">@calm_palant</p>
+              <p class="news__address">@calm_plants_store</p>
               <p class="news__detail">
-                開店状況やイベントのお知らせなど、最新情報はInstagramをご覧ください。
+                入荷状況やイベントなどのお知らせなど、最新情報はInstagramをご覧ください。
               </p>
-              <div class="news__row">
-                <article class="news__article">
-                  <div class="news__imgbox">
-                    <img class="news__img" src="./img/damy.jpg" alt="" />
-                  </div>
-                  <p class="news__text">これはダミーテキストになります。</p>
-                </article>
-                <article class="news__article">
-                  <div class="news__imgbox">
-                    <img class="news__img" src="./img/damy.jpg" alt="" />
-                  </div>
-                  <p class="news__text">これはダミーテキストになります。</p>
-                </article>
-                <article class="news__article">
-                  <div class="news__imgbox">
-                    <img class="news__img" src="./img/damy.jpg" alt="" />
-                  </div>
-                  <p class="news__text">これはダミーテキストになります。</p>
-                </article>
-              </div>
+
+              <div class="news__row"></div>
+
               <div class="news__btnbox">
-                <a class="news__btn" href="https://instagram.com/trident__it?igshid=MzRlODBiNWFlZA==">もっと見る</a>
+                <a class="news__btn" href="https://www.instagram.com/calm_plants_store/" target="_blank">もっと見る</a>
               </div>
           </div>
           <div class="info__ calendar calendar fade">
@@ -270,14 +260,16 @@
                   <p class="calendar__btn">営業日</p>
                 </div>
                 <p class="calendar__explanation">
-                  仕入れ状況などにより営業日が急遽変更になる可能性がございます。<br />
+                  営業日が急遽変更になる可能性がございます。<br />
                   カレンダーをご覧ください。
+                  <p class="calendar__date">定休日：毎週日月、他定休日あり</p>
                 </p>
               </div>
               <div class="calendar__content">
                 <p class="calendar__explanation-t">
-                  仕入れ状況などにより営業日が急遽変更になる可能性がございます。<br />
+                  営業日が急遽変更になる可能性がございます。<br />
                   カレンダーをご覧ください。
+                  <p class="calendar__date-t">定休日：毎週日月、他定休日あり</p>
                 </p>
              <div id="calendar" class="calendar__box"></div>
               </div>
@@ -294,10 +286,10 @@
           <div class="consept__note">
             <h3 class="consept__catch">Calmとは</h3>
             <p class="consept__detail">
-              植物たちが持っている様々な魅力をこの場所からたくさんの方の届けたい。<br />
-              そんな想いでCalmを始めました。
-              お買い上げ後、ずっと大切に育ててもらえるように、アフターサービスもお引き受けいたします。<br />
-              くらしの中に植物をプラスして穏やかで飾り豊かな時間を過ごしてみませんか？
+              植物たちの持っている様々な魅力をこの場所からたくさんの方に届けたい。
+              そんな想いでCalmを始めました。<br>
+              ご購入後もずっと大切に育てて頂けるように、アフターケアサービスもお引き受けいたします。<br>
+              くらしの中に植物をプラスに、穏やかで彩り豊かな時間を過ごしてみませんか？
             </p>
           </div>
           <div class="swiper">
@@ -307,12 +299,11 @@
                   <img class="consept__img" src="./img/damy9.jpg" alt="" />
                 </div>
                 <div class="consept__txbox">
-                  <h4 class="consept__title">雑誌などのセット販売</h4>
+                  <h4 class="consept__title">雑貨とのセット販売</h4>
                   <p class="consept__text">
-                    ご希望の方には、素材の質感とカラーが確認できる革サンプルを無料でお送りいたします。
-                    無料革サンプル請求からご注文ください。<br />
-                    ご希望の方には、素材の質感とカラーが確認できる革サンプルを無料でお送りいたします。
-                    無料革サンプル請求からご注文ください。
+                    プランター・カゴ・花器などお好みの雑貨と植物を組み合わせることで、ご購入後すぐにお部屋のインテリアとして取り入れて頂けます。<br>
+                    セット購入での植え替えサービスも行っています。<br>
+                    お気軽にお申し付けください。
                   </p>
                 </div>
               </div>
@@ -321,12 +312,10 @@
                   <img class="consept__img" src="./img/damy5.jpg" alt="" />
                 </div>
                 <div class="consept__txbox">
-                  <h4 class="consept__title">豊富な種類の植物を販売</h4>
+                  <h4 class="consept__title">様々な種類のラインナップ</h4>
                   <p class="consept__text">
-                    ご希望の方には、素材の質感とカラーが確認できる革サンプルを無料でお送りいたします。
-                    無料革サンプル請求からご注文ください。<br />
-                    ご希望の方には、素材の質感とカラーが確認できる革サンプルを無料でお送りいたします。
-                    無料革サンプル請求からご注文ください。
+                    季節を感じられるものから希少種まで。<br>
+                    お客様一人一人の選択肢の幅が広がる植物・雑貨を取り揃えています。
                   </p>
                 </div>
               </div>
@@ -335,12 +324,10 @@
                   <img class="consept__img" src="./img/damy6.jpg" alt="" />
                 </div>
                 <div class="consept__txbox">
-                  <h4 class="consept__title">ご購入時の悩みの相談</h4>
+                  <h4 class="consept__title">お悩み相談</h4>
                   <p class="consept__text">
-                    ご希望の方には、素材の質感とカラーが確認できる革サンプルを無料でお送りいたします。
-                    無料革サンプル請求からご注文ください。<br />
-                    ご希望の方には、素材の質感とカラーが確認できる革サンプルを無料でお送りいたします。
-                    無料革サンプル請求からご注文ください。
+                    ご購入前後はもちろん、ご自宅にある植物へのお悩みもいつでもご相談下さい。<br>
+                    豊富な知識を生かしてアドバイスさせて頂きます。
                   </p>
                 </div>
               </div>
@@ -349,28 +336,11 @@
                   <img class="consept__img" src="./img/damy7.jpg" alt="" />
                 </div>
                 <div class="consept__txbox">
-                  <h4 class="consept__title">
-                    購入後すぐに<br />インテリアとして飾れる
-                  </h4>
+                  <h4 class="consept__title">プランツレスキュー</h4>
                   <p class="consept__text">
-                    ご希望の方には、素材の質感とカラーが確認できる革サンプルを無料でお送りいたします。
-                    無料革サンプル請求からご注文ください。<br />
-                    ご希望の方には、素材の質感とカラーが確認できる革サンプルを無料でお送りいたします。
-                    無料革サンプル請求からご注文ください。
-                  </p>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="consept__imgbox">
-                  <img class="consept__img" src="./img/damy8.jpg" alt="" />
-                </div>
-                <div class="consept__txbox">
-                  <h4 class="consept__title">充実した<br />アフターサービス</h4>
-                  <p class="consept__text">
-                    ご希望の方には、素材の質感とカラーが確認できる革サンプルを無料でお送りいたします。
-                    無料革サンプル請求からご注文ください。<br />
-                    ご希望の方には、素材の質感とカラーが確認できる革サンプルを無料でお送りいたします。
-                    無料革サンプル請求からご注文ください。
+                    ご購入頂いた植物、更にはご自宅にある植物へのアフターケアもお任せ下さい。<br>
+                    「購入後元気がないな…？」「伸びてきた葉は切っていいのかな…？」などなど、どんな事でもご相談下さい。<br>
+                    それぞれに合ったケアを施し、ずっと大切にして頂けるようサポートします。（有料メニューあり）
                   </p>
                 </div>
               </div>
@@ -387,11 +357,11 @@
       <section class="gallery">
         <div class="gallery__inner fade">
           <h3 class="gallery__title">ギャラリー</h3>
-          <p class="gallery__detail">
-            当店で販売されている、との感じでここではサンプルを入れておきます。<br />
-            どれくらいのやつがいいかな、2行くらいがいいかな
-          </p>
-            <div class="gallery__list">
+          <!-- <p class="gallery__detail">
+            ギャラリーでは、当店で販売されている植物の素敵な写真を上げていきます。<br>
+            個性豊かな植物たちが、心と暮らしに彩りを与えます。
+          </p> -->
+            <!-- <div class="gallery__list">
               <div class="gallery__item">
                 <img class="gallery__img" src="./img/damy2.jpg" alt="" />
               </div>
@@ -410,17 +380,23 @@
               <div class="gallery__item">
                 <img class="gallery__img" src="./img/damy2.jpg" alt="" />
               </div>
+            </div> -->
+            <div class="gallery__preparation">
+              <p class="gallery__wait">
+                準備中になります。<br>
+                オープンまでお待ちください。
+              </p>
             </div>
-             <div class="gallery__btnbox">
+             <!-- <div class="gallery__btnbox">
               <a class="gallery__btn" href="./gallery.html">もっと見る</a>
-            </div>
+            </div> -->
         </div>
       </section>
           <section class="wave-m">
         <img src="./img/wave4-2.svg" alt="" type=”image/svg+xml” width="100%"
         height="100%" />
       </section>
-      <section class="contact fade">
+      <!-- <section class="contact fade">
         <div class="contact__inner">
           <div class="contact__content">
             <div class="contact__row">
@@ -433,30 +409,32 @@
                   <span class="contact__bottom">ができます</span>
                 </p>
                 <p class="contact__catch">
-                  観葉植物に関する悩み事はInstagramから！
+                  観葉植物に関する悩み事はGoogle Formsから！
                 </p>
                 <p class="contact__text">
-                  当店で販売されている、との感じでここではサンプルを入れておきます。どれくらいのやつがいいかな、2行くらいがいいかな
+                  観葉植物に関するお悩みや、当店に関するお悩みはGoogle Formsのメッセージ機能より受け付けております。<br>
+                  メッセージよりご連絡お願いします。
                 </p>
               </div>
               <div class="contact__box">
-                <img class="contact__img" src="./img/mockup.png" alt="" />
 
                 <div class="contact__btn">
-                  <a href="https://instagram.com/trident__it?igshid=MzRlODBiNWFlZA==">
+                  <a href="https://www.instagram.com/calm_plants_store/" target="_blank">
                     <div class="contact__app">
-                      <p class="contact__inquiry">
-                        お問い合わせ<br />予約はInstagramから
-                      </p>
-                      <img
-                        class="contact__logo"
-                        src="./img/Instagram.png"
-                        alt=""
-                      />
-                      <p class="contact__annotation">
-                        ※クリックすると<br />
-                        Instagramが表示されます。
-                      </p>
+                      <div class="contact__btnbox">
+                        <p class="contact__inquiry">
+                          お問い合わせ<br />質問はGoogle Formsから
+                        </p>
+                        <img
+                          class="contact__logo"
+                          src="./img/mail.png"
+                          alt=""
+                        />
+                        <p class="contact__annotation">
+                          ※クリックすると<br />
+                          Google Formsが表示されます。
+                        </p>
+                      </div>
                     </div>
                   </a>
                 </div>
@@ -464,7 +442,21 @@
             </div>
           </div>
         </div>
+      </section> -->
+
+
+      <section class="contact">
+        <div class="contact__inner">
+          <h2 class="contact__title">お問い合わせ</h2>
+          <div class="contact__txbox">
+                <p class="contact__text">観葉植物に関する悩み事はGoogle Formsから！</p>
+                <p class="contact__text">観葉植物に関するお悩みや、当店に関するお悩みはGoogle Formsより受け付けております。</p>
+                <p class="contact__text">メッセージよりご連絡お願いします。</p>
+          </div>
+          <a class="contact__btn" href="">質問する</a>
+        </div>
       </section>
+
       <section id="access" class="access">
         <div class="access__inner fade">
           <h3 class="access__title">アクセス</h3>
@@ -473,36 +465,41 @@
               <dl class="access__info">
                 <dt class="access__note">住所</dt>
                 <dd class="access__text">
-                  〒450-0002<br />
-                  名古屋市中村区名駅3-24-155
+                  〒457-0862<br />
+                  名古屋市南区内田橋1丁目5-4<br> 内田橋ストア1F
                 </dd>
               </dl>
               <dl class="access__info">
                 <dt class="access__note">営業時間</dt>
-                <dd class="access__text">9:00 〜 17:00</dd>
+                <dd class="access__text">10:00 〜 17:00</dd>
               </dl>
-              <dl class="access__info">
+              <!-- <dl class="access__info">
                 <dt class="access__note">電話番号</dt>
                 <dd class="access__text">012-3344-5566</dd>
-              </dl>
+              </dl> -->
               <dl class="access__info">
                 <dt class="access__note">定休日</dt>
-                <dd class="access__text">毎週火曜日</dd>
+                <dd class="access__text">毎週月・日（他不定休あり）</dd>
               </dl>
               <dl class="access__info">
                 <dt class="access__note">駐車場</dt>
-                <dd class="access__text">2台有り</dd>
+                <dd class="access__text">店舗西側に1台有</dd>
               </dl>
             </div>
             <div class="access__map">
-              <iframe
+              <!-- <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.3621226033465!2d136.88370427572673!3d35.17252595775093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600376dce666cdbb%3A0x8b7d4364675157b2!2z44CSNDUwLTAwMDIg5oSb55-l55yM5ZCN5Y-k5bGL5biC5Lit5p2R5Yy65ZCN6aeF77yT5LiB55uu77yS77yU4oiS77yR77yVIOODiOODqeOCpOODh-ODs-ODiOOCs-ODs-ODlOODpeODvOOCv-WwgumWgOWtpuagoQ!5e0!3m2!1sja!2sjp!4v1689216297275!5m2!1sja!2sjp"
                 class="access__google"
                 style="border: 0"
                 allowfullscreen=""
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
-              ></iframe>
+              ></iframe> -->
+
+
+              <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d6618.4934385165825!2d136.89753952722378!3d35.11451625057178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z44CSNDU3LTA4NjIg5ZCN5Y-k5bGL5biC5Y2X5Yy65YaF55Sw5qmLMeS4geebrjUtNCDlhoXnlLDmqYvjgrnjg4jjgqIxRg!5e0!3m2!1sja!2sjp!4v1695264030319!5m2!1sja!2sjp" class="access__google" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
             </div>
           </div>
         </div>
@@ -516,7 +513,7 @@
       <div class="footer__inner">
         <img src="" alt="" />
         <p class="footer__copy">
-          <small>All Rights Reserved 2023 ©︎ Calm plant shop</small>
+          <small>All Rights Reserved 2023 ©︎ Calm plants store</small>
         </p>
       </div>
     </footer>

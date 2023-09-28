@@ -370,7 +370,7 @@ ul {
 }
 @media (max-width: 960px) {
   .calendar__detail {
-    display: none;
+    width: 100%;
   }
 }
 .calendar__btnbox {
@@ -415,24 +415,10 @@ ul {
 }
 .calendar__explanation-t {
   line-height: 1.8;
-  display: none;
   margin-bottom: 0.5em;
-}
-@media (max-width: 960px) {
-  .calendar__explanation-t {
-    display: block;
-  }
 }
 .calendar__date {
   margin-top: 1.5em;
-}
-.calendar__date-t {
-  display: none;
-}
-@media (max-width: 960px) {
-  .calendar__date-t {
-    display: block;
-  }
 }
 
 .fc .fc-toolbar-title {
@@ -758,6 +744,11 @@ ul {
     font-size: 0.875rem;
   }
 }
+@media (max-width: 600px) {
+  .access__info {
+    display: block;
+  }
+}
 .access__note {
   width: 18%;
   color: #3fa037;
@@ -772,12 +763,22 @@ ul {
     width: 24%;
   }
 }
+@media (max-width: 600px) {
+  .access__note {
+    margin-bottom: 0.7em;
+  }
+}
 .access__text {
   color: #fff;
 }
 @media (max-width: 960px) {
   .access__text {
     width: 60%;
+  }
+}
+@media (max-width: 600px) {
+  .access__text {
+    width: 100%;
   }
 }
 .access__google {
@@ -789,6 +790,10 @@ ul {
     width: 100%;
     height: 80vw;
   }
+}
+.access__link {
+  color: #fff;
+  text-decoration: underline;
 }
 
 .t-gallery {
